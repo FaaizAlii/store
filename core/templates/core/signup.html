@@ -1,0 +1,32 @@
+{% extends 'core/base.html' %}
+
+{% block title %} Sign Up {% endblock %}
+
+{% block body %}
+    <div class="w-1/2 bg-gray-300 rounded-xl p-6 my-6 mx-auto">
+        <h1 class="p-3 text-3xl">Sign Up</h1>
+
+        <form method="post" action=".">
+            {% csrf_token %}
+            <div class="pb-6">
+                <label for="username" class="inline-block">Enter Name</label>
+            {{ form.username }} <br>
+            </div>
+
+            <div class="pb-6">
+            <label for="email">Enter Email</label>
+            {{ form.email }} <br>
+        </div>
+
+        <div class="pb-6">
+            <label for="password1">Enter Password</label>
+            {{ form.password1 }} <br>
+        </div>
+
+        <div class="pb-6 text-xl">
+            <label for="password2">Confirm Password</label>
+            {{ form.password2 }} <br>
+        </div>
+        </form>
+    </div>
+{% endblock %}
