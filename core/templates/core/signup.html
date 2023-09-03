@@ -4,29 +4,33 @@
 
 {% block body %}
     <div class="w-1/2 bg-gray-300 rounded-xl p-6 my-6 mx-auto">
-        <h1 class="p-3 text-3xl">Sign Up</h1>
+        <strong><h1 class="p-3 text-4xl mb-6">Sign Up</h1></strong>
 
         <form method="post" action=".">
             {% csrf_token %}
-            <div class="pb-6">
-                <label for="username" class="inline-block">Enter Name</label>
+            <div class="pb-3 text-xl ">
+                <label for="username">Enter Name</label> <br>
             {{ form.username }} <br>
             </div>
 
-            <div class="pb-6">
-            <label for="email">Enter Email</label>
+            <div class="pb-3 text-xl">
+            <label for="email">Enter Email</label> <br>
             {{ form.email }} <br>
         </div>
 
-        <div class="pb-6">
-            <label for="password1">Enter Password</label>
+        <div class="pb-3 text-xl">
+            <label for="password1">Enter Password</label> <br>
             {{ form.password1 }} <br>
         </div>
 
-        <div class="pb-6 text-xl">
-            <label for="password2">Confirm Password</label>
+        <div class="pb-3 text-xl">
+            <label for="password2">Confirm Password</label> <br>
             {{ form.password2 }} <br>
         </div>
+
+        <button class="py-4 px-9 rounded-xl bg-teal-500 font-bold hover:bg-teal-700 text-white">
+            Submit
+        </button>
         </form>
     </div>
 {% endblock %}
