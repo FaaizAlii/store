@@ -22,7 +22,7 @@ def signup(request):
         form = SignUpForm(request.POST)
         if form.is_valid():
             form.save()
-            return render(request, 'core/signup.html', {
+            return render(request, 'core/index.html', {
                 'form': form
             })
     else:
