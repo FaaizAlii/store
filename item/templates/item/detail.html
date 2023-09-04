@@ -15,6 +15,13 @@
             {% if item.description %}
                 <p class="mt-3">{{ item.description }}</p>
             {% endif %}
+            {% if request.user == item.created_by %}
+                <p>This item is your</p>
+                <a href="{% url 'item:edit' item.id %}" class="inline-block  mt-6 py-3 px-6 rounded-xl bg-teal-500 hover:bg-teal-600">Update</a>
+                <a href="{% url 'item:delete' item.id %}" class="inline-block  mt-6 py-3 px-6 rounded-xl bg-red-500 hover:bg-red-600">Delete</a>
+            {% else %}
+                <a href="#" class="inline-block mt-6 py-3 px-6 rounded-xl bg-teal-500">Contact Seller</a>
+            {% endif %}
         </div>
     </div>
 
